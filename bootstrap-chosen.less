@@ -10,6 +10,7 @@
 @chznBackground: @inputBackground;
 @chznBorder: @inputBorder;
 @chznBorderRadius: @inputBorderRadius;
+@chznLabelRadius: 1px;
 @chznBoxShadow: ~"inset 0 1px 1px rgba(0, 0, 0, .075)";
 @chznDropBorder: @grayLight;
 @chznDropBoxShadow: ~"0 8px 8px rgba(0, 0, 0, .25)";
@@ -18,7 +19,7 @@
 @chznFocusBoxShadow: ~"0 1px 1px rgba(0, 0, 0, .075) inset, 0 0 8px rgba(82, 168, 236, .6)";
 @chznFocusTransition: ~"border linear .2s, box-shadow linear .2s";
 @chznHeight: @baseLineHeight + 8px; // 4px padding
-@chznSpritePath: "chosen-sprite.png";
+@chznSpritePath: "../javascripts/jquery/plugins/chosen/chosen-sprite.png";
 
 .chosen            { width: 220px; }
 .chosen-mini       { width: 70px; }
@@ -146,7 +147,7 @@
   .chzn-single {
     background-color: @chznBackground;
     #gradient > .vertical(@white, @grayLighter);
-    //.border-radius(5px);
+    .border-radius(@inputBorderRadius);
     -webkit-background-clip: padding-box;
        -moz-background-clip: padding;
             background-clip: padding-box;
@@ -294,13 +295,13 @@
               background-clip: padding-box;
       background-color: @grayLighter;
       border: 1px solid @chznBorder;
-      .border-radius(@chznBorderRadius);
+      .border-radius(@chznLabelRadius);
       #gradient > .vertical(@white, @grayLighter);
       .box-shadow(@chznBoxShadow);
-      color: @grayDark;
+      color: @gray;
       cursor: default;
-      line-height: 13px;
-      margin: 3px 0 3px 5px;
+      line-height: 16px;
+      margin: 2px 0 2px 2px;
       padding: 3px 20px 3px 5px;
       position: relative;
 
@@ -311,8 +312,9 @@
         height: 13px;
         position: absolute;
         right: 3px;
-        top: 4px;
+        top: 6px;
         width: 12px;
+        opacity: 0.9;
 
         &:hover {
           background-position: right -11px;
@@ -459,4 +461,3 @@
     padding: 4px 5px 4px 20px;
   }
 }
-
